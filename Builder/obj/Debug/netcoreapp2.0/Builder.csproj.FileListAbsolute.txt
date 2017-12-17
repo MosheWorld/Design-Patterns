@@ -1,0 +1,20 @@
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Builder\bin\Debug\netcoreapp2.0\Builder.deps.json
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Builder\bin\Debug\netcoreapp2.0\Builder.runtimeconfig.json
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Builder\bin\Debug\netcoreapp2.0\Builder.runtimeconfig.dev.json
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Builder\bin\Debug\netcoreapp2.0\Builder.dll
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Builder\bin\Debug\netcoreapp2.0\Builder.pdb
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Builder\obj\Debug\netcoreapp2.0\Builder.csproj.CoreCompileInputs.cache
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Builder\obj\Debug\netcoreapp2.0\Builder.AssemblyInfoInputs.cache
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Builder\obj\Debug\netcoreapp2.0\Builder.AssemblyInfo.cs
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Builder\obj\Debug\netcoreapp2.0\Builder.dll
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Builder\obj\Debug\netcoreapp2.0\Builder.pdb
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\bin\Debug\netcoreapp2.0\Builder.deps.json
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\bin\Debug\netcoreapp2.0\Builder.runtimeconfig.json
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\bin\Debug\netcoreapp2.0\Builder.runtimeconfig.dev.json
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\bin\Debug\netcoreapp2.0\Builder.dll
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\bin\Debug\netcoreapp2.0\Builder.pdb
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\obj\Debug\netcoreapp2.0\Builder.csproj.CoreCompileInputs.cache
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\obj\Debug\netcoreapp2.0\Builder.AssemblyInfoInputs.cache
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\obj\Debug\netcoreapp2.0\Builder.AssemblyInfo.cs
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\obj\Debug\netcoreapp2.0\Builder.dll
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Builder\obj\Debug\netcoreapp2.0\Builder.pdb

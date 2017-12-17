@@ -1,0 +1,10 @@
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\bin\Debug\netcoreapp2.0\Chain of Responsibility.deps.json
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\bin\Debug\netcoreapp2.0\Chain of Responsibility.runtimeconfig.json
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\bin\Debug\netcoreapp2.0\Chain of Responsibility.runtimeconfig.dev.json
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\bin\Debug\netcoreapp2.0\Chain of Responsibility.dll
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\bin\Debug\netcoreapp2.0\Chain of Responsibility.pdb
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.csproj.CoreCompileInputs.cache
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.AssemblyInfoInputs.cache
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.AssemblyInfo.cs
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.dll
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Chain of Responsibility\obj\Debug\netcoreapp2.0\Chain of Responsibility.pdb

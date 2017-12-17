@@ -1,0 +1,10 @@
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Template Method\bin\Debug\netcoreapp2.0\Template Method.deps.json
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Template Method\bin\Debug\netcoreapp2.0\Template Method.runtimeconfig.json
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Template Method\bin\Debug\netcoreapp2.0\Template Method.runtimeconfig.dev.json
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Template Method\bin\Debug\netcoreapp2.0\Template Method.dll
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Template Method\bin\Debug\netcoreapp2.0\Template Method.pdb
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Template Method\obj\Debug\netcoreapp2.0\Template Method.csproj.CoreCompileInputs.cache
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Template Method\obj\Debug\netcoreapp2.0\Template Method.AssemblyInfoInputs.cache
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Template Method\obj\Debug\netcoreapp2.0\Template Method.AssemblyInfo.cs
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Template Method\obj\Debug\netcoreapp2.0\Template Method.dll
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Template Method\obj\Debug\netcoreapp2.0\Template Method.pdb

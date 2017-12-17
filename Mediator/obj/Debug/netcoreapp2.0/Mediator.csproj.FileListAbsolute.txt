@@ -1,0 +1,20 @@
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Mediator\bin\Debug\netcoreapp2.0\Mediator.deps.json
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Mediator\bin\Debug\netcoreapp2.0\Mediator.runtimeconfig.json
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Mediator\bin\Debug\netcoreapp2.0\Mediator.runtimeconfig.dev.json
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Mediator\bin\Debug\netcoreapp2.0\Mediator.dll
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Mediator\bin\Debug\netcoreapp2.0\Mediator.pdb
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Mediator\obj\Debug\netcoreapp2.0\Mediator.csproj.CoreCompileInputs.cache
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Mediator\obj\Debug\netcoreapp2.0\Mediator.AssemblyInfoInputs.cache
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Mediator\obj\Debug\netcoreapp2.0\Mediator.AssemblyInfo.cs
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Mediator\obj\Debug\netcoreapp2.0\Mediator.dll
+c:\Users\mmosh\Desktop\Moshe Files\Design Patterns C#\Mediator\obj\Debug\netcoreapp2.0\Mediator.pdb
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Mediator\bin\Debug\netcoreapp2.0\Mediator.deps.json
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Mediator\bin\Debug\netcoreapp2.0\Mediator.runtimeconfig.json
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Mediator\bin\Debug\netcoreapp2.0\Mediator.runtimeconfig.dev.json
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Mediator\bin\Debug\netcoreapp2.0\Mediator.dll
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Mediator\bin\Debug\netcoreapp2.0\Mediator.pdb
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Mediator\obj\Debug\netcoreapp2.0\Mediator.csproj.CoreCompileInputs.cache
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Mediator\obj\Debug\netcoreapp2.0\Mediator.AssemblyInfoInputs.cache
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Mediator\obj\Debug\netcoreapp2.0\Mediator.AssemblyInfo.cs
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Mediator\obj\Debug\netcoreapp2.0\Mediator.dll
+c:\Users\mmosh\Desktop\Moshe Files\GitHub Projects\Design Patterns C#\Mediator\obj\Debug\netcoreapp2.0\Mediator.pdb
