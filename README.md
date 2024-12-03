@@ -1,41 +1,33 @@
 # Design-Patterns
-All Design Patterns code and explanation are here, explanation will be inside each folder of specific Design Pattern and the code will be written in C# at environment Visual Studio Code.
+All Design Pattern code and explanations are here. Each folder contains the explanation and C# code written for Visual Studio Code.
 
-Trying to make the code simple as I can with good explanation, read inside the folder the explanation of the design pattern, clone the design pattern to your environment and run it to see the results and understand it even deeply.
+I aim to keep the code simple and well-explained. Read the explanation inside each folder, clone the pattern to your environment, and run it to explore and understand it better.
 
 # Adapter
 
-In computer programming, the adapter pattern (often referred to as the wrapper pattern or simply a wrapper) is a design pattern that translates 
-one interface for a class into a compatible interface. An adapter allows classes to work together that normally could not because of incompatible 
-interfaces, by providing its interface to clients while using the original interface. The adapter translates calls to its interface into calls to the original 
-interface, and the amount of code necessary to do this is typically small. The adapter is also responsible for transforming data into appropriate forms.
- For instance, if multiple boolean values are stored as a single integer but your consumer requires a 'true'/'false', the adapter would be responsible for 
-extracting the appropriate values from the integer value.
+### Definition
+The **Adapter Pattern** (also known as the *Wrapper Pattern*) allows two incompatible interfaces to work together by acting as a bridge. It translates one interface into another that the client expects, enabling seamless interaction between otherwise incompatible components.
 
-It allows two unrelated interfaces to work together through the different objects, possibly playing same role.
-It modifies original interface.
+### Key Features
+- Converts the interface of one class into another expected by the client.
+- Facilitates compatibility without modifying existing code.
+- Used to adapt legacy code or integrate third-party libraries.
 
 # Bridge
 
-At first sight, the Bridge pattern looks a lot like the Adapter pattern in that a class is used to convert one kind of interface to another. 
-However, the intent of the Adapter pattern is to make one or more classes' interfaces look the same as that of a particular class. 
-The Bridge pattern is designed to separate a class's interface from its implementation so you can vary or replace the implementation without 
-changing the client code.
+### Definition
+The **Bridge** is a structural design pattern that separates an abstraction from its implementation, allowing them to vary independently. It achieves this by using composition to decouple abstraction and implementation instead of relying on inheritance.
 
+### Key Features
+- Abstraction and implementation are not tightly coupled at compile time.
+- Both abstraction and implementation can evolve independently without impacting clients.
+- Promotes flexibility by favoring composition over inheritance.
 
-Bridge pattern:
-
-It is a structural pattern
-Abstraction and implementation are not bound at compile time
-Abstraction and implementation - both can vary without impact in client
-Uses composition over inheritance.
-Use the Bridge pattern when:
-
-You want run-time binding of the implementation,
-You have a proliferation of classes resulting from a coupled interface and numerous implementations,
-You want to share an implementation among multiple objects,
-You need to map orthogonal class hierarchies.
-
+### When to Use
+- When you need runtime binding of an implementation.
+- To reduce class proliferation caused by combining multiple interfaces and implementations.
+- To share a single implementation across multiple abstractions.
+- To handle orthogonal (independent) class hierarchies effectively.
 
 Before Bridge Pattern:
 
@@ -54,243 +46,226 @@ After Bridge Pattern:
 
 # Builder
 
-The key difference between a builder and factory IMHO, is that a builder is useful when you need to do lots of things to build an object. 
-For example imagine a DOM. You have to create plenty of nodes and attributes to get your final object. 
-A factory is used when the factory can easily create the entire object within one method call.
+### Definition
+The **Builder** is a creational design pattern used when constructing a complex object step by step. Unlike a factory, which creates an entire object in a single method call, a builder allows for the construction of an object through a series of method calls, making it easier to handle complex objects with many parts.
 
-One example of using a builder is a building an XML document, I've used this model when building HTML fragments for example I might have a 
-Builder for building a specific type of table and it might have the following methods (parameters are not shown):
+### Key Features
+- Useful for creating complex objects with many parts.
+- Allows for step-by-step construction, where each method adds a part to the object.
+- Focuses on assembling parts in a specific order to produce the final object.
 
-BuildOrderHeaderRow()
-BuildLineItemSubHeaderRow()
-BuildOrderRow()
-BuildLineItemSubRow()
+### When to Use
+- When creating objects that require multiple steps or configurations.
+- To separate the construction of an object from its representation, allowing for different variations of the object.
+- When a simple factory method is not sufficient due to the complexity of the object being created.
 
 # Chain of Responsibility
 
-With this pattern, you create a chain of objects that examine a request. 
-Each in turn examines the request and either handles it or passes it to the next object in the chain.
+### Definition
+The **Chain of Responsibility** is a behavioral design pattern that allows a request to be passed through a chain of handlers. Each handler in the chain examines the request and either processes it or passes it along to the next handler.
 
-Benefits
+### Key Features
+- Decouples the sender of the request from its receivers.
+- Simplifies objects by removing the need to know about the structure of the chain or hold references to its members.
+- Supports dynamic changes by adding or removing handlers in the chain.
 
-- decouples the sender of the request and its receivers
-- simplifies the object because it doesn have to know the chain structure and keep references to its members
-- allows the dynamic adding or removal of responsibility by changing the order or members of the chain
+### Benefits
+- **Decoupling**: Sender and receiver are independent.
+- **Simplified Objects**: Handlers don't need to know about each other.
+- **Flexibility**: Responsibility can be changed or extended dynamically by modifying the chain.
 
+### Drawbacks
+- **Uncertainty**: The request may not be handled if no handler in the chain is suitable.
+- **Debugging**: Runtime behavior may be complex and difficult to trace.
 
-Drawbacks
-
-- execution of the request isn't garanteed, it may fall off the chain if no object handles it
-- runtime characteristics can be hard to observe and debug
-
-
-Potential Use cases
-
-- mouse clicks and keyboard events.
-- email. For example, email is received and passed to the first handler, the spam handler. It is then either processed or passed to the second handler, etc.
-
--------------------------------------------------------------
-
-- the chain contains multiple instances, and each of them performs a different action
-- each instance in the chain can choose to propagate to the next instance, or stop the flow
-
-So, with servlet filters, you can have
-
-- a filter that checks if the user is authenticated. If he is, the filter propagates to the next filter
-
-- the next filter checks if the user has permissions to the current resource. If it does, it propagate to the next
-
-- the next logs the current request URL and the username, and always propagate to the next
-
-- there is nothing else in the chain, so the target object is finally invoked
+### Potential Use Cases
+- **Event handling**: For example, mouse clicks or keyboard events are passed through multiple handlers (e.g., focus handling, validation, logging).
+- **Email processing**: An email might be processed through a series of filters (e.g., spam filter, classification, forwarding).
+- **Servlet Filters**: 
+  - A filter checks user authentication and passes to the next filter.
+  - The next filter checks user permissions.
+  - The next filter logs the request and passes it along.
+  - Finally, if no more filters exist, the target resource is invoked.
 
 # Command
 
-The main motivation for using the Command pattern is that the executor of the command does not need to know anything at all about what 
-the command is, what context information it needs on or what it does. All of that is encapsulated in the command.
+### Definition
+The **Command** is a behavioral design pattern that encapsulates a request as an object, allowing the sender to decouple itself from the receiver. This means that the executor doesn't need to know what the command does, how it's executed, or what context is involved; all of that is abstracted within the command itself.
 
-This allows you to do things such as have a list of commands that are executed in order, that are dependent on other items, 
-that are assigned to some triggering event etc.
+### Key Features
+- **Decoupling**: The sender does not need to know the specifics of how the command is executed.
+- **Encapsulation**: The command stores all the information necessary to perform an action.
+- **Flexibility**: Commands can be stored, passed around, or scheduled for later execution.
 
-Let us focus on the non-implementation aspect of the command design, and some main reasons for using the 
-Command desing pattern grouped in two major categories:
+### When to Use
+- When you need to queue commands, schedule them, or pass them as parameters.
+- When you want to support undo/redo functionality, as each command is a self-contained object.
+- When you need to decouple the object that invokes the operation from the one that performs it.
 
-- Hiding actual implementation of how the command is executed
-- Allow methods to be built around command, aka command extensions
+### Benefits
+- **Hiding Implementation**: The actual execution of the command is hidden from the caller.
+- **Extensibility**: You can easily add new commands without changing existing code by creating new command classes.
 
 # Composite
 
-Use the Composite pattern when
+### Definition
+The **Composite** is a structural design pattern that allows you to treat individual objects and compositions of objects uniformly. It is used to represent part-whole hierarchies, where individual objects and their compositions are treated the same way, enabling clients to work with complex structures without needing to distinguish between components and their containers.
 
-- you want to represent part-whole hierarchies of objects.
-- you want clients to be able to ignore the difference between compositions of objects and individual objects. 
-Clients will treat all objects in the composite structure uniformly.
-
-
+### When to Use
+- When you need to represent part-whole hierarchies of objects (e.g., tree structures, organizational charts).
+- When you want clients to interact with individual objects and compositions in a uniform way, without needing to differentiate between them.
 
 # Decorator
 
-The Decorator Pattern is used for adding additional functionality to a particular object as opposed to a class of objects. It is easy to add 
-functionality to an entire class of objects by subclassing an object, but it is impossible to extend a single object this way. 
-With the Decorator Pattern, you can add functionality to a single object and leave others like it unmodified.
+### Definition
+The **Decorator** is a structural design pattern that allows you to add additional functionality to a specific object dynamically, without altering the class of the object. Unlike subclassing, which applies changes to all objects of a class, the **Decorator Pattern** enables you to extend the behavior of individual objects while keeping other instances unaffected.
+
+### When to Use
+- When you need to add functionality to a single object without affecting others of the same class.
+- When subclassing would result in a large number of classes due to various combinations of functionality.
 
 # Facade
 
-The Facade design pattern simplifies the interface to a complex system; 
-because it is usually composed of all the classes which make up the subsystems of the complex system.
+### Definition
+The **Facade** is a structural design pattern that provides a simplified interface to a complex system, hiding its internal complexities. It offers a high-level interface that makes the system easier to use and decouples the client code from the subsystem details, allowing the system to be modified with minimal impact on the client.
 
-A Facade shields the user from the complex details of the system and provides them with a simplified view of it which is easy to use. 
-It also decouples the code that uses the system from the details of the subsystems, making it easier to modify the system later.
+### When to Use
+- When you want to simplify interaction with a complex system or subsystem.
+- To provide a unified interface to a set of interfaces in a subsystem.
+- When you need to decouple client code from complex subsystem details, making the system easier to maintain and extend.
 
 # Factory
 
-So, to me the factory pattern is like a hiring agency. You've got someone that will need a variable number of workers. 
-This person may know some info they need in the people they hire, but that's it.
+### Definition
+The **Factory** is a creational design pattern that allows you to create objects without exposing the instantiation logic to the client. The client simply provides the necessary input, and the factory handles the creation of the object, including any dependencies or complex initialization.
 
-So, when they need a new employee, they call the hiring agency and tell them what they need. 
-Now, to actually hire someone, you need to know a lot of stuff - benefits, eligibility verification, etc. 
-But the person hiring doesn't need to know any of this - the hiring agency handles all of that.
-
-In the same way, using a Factory allows the consumer to create new objects without having to know the details of how they're created, 
-or what their dependencies are - they only have to give the information they actually want.
-
-( Creates objects without exposing the instantiation logic to the client. )
+### When to Use
+- When object creation is complex or requires several steps.
+- To decouple the client from the specific classes that need to be instantiated.
+- When you need to centralize object creation in one place, simplifying the code for clients.
 
 # Flyweight
 
-Flyweight pattern try to reuse already existing similar kind objects by storing them and creates new object when no matching object is found.
+### Definition
+The **Flyweight** is a structural design pattern that optimizes resource usage by sharing objects. Instead of creating a new instance for each request, it reuses existing objects that are similar, creating new ones only when no match is found. This pattern is especially useful when dealing with large numbers of objects to minimize memory usage.
 
-First of all they belong to different categories: Prototype is creational one, Flyweight is structural one.
+### When to Use
+- When you have a large number of similar objects and need to optimize memory usage.
+- To reduce the overhead of creating numerous objects that have many common attributes.
+- In scenarios like text editors, where characters are reused across a large document.
 
-In Prototype objects' creation go through cloning, it ease object's creation. By making a request for cloning we create new cloned object each time.
+### Key Features
+- **Reuse**: Objects are shared and reused, minimizing memory consumption.
+- **Efficient**: New objects are created only when no existing match is found.
+- **Optimized Memory**: Makes sense in scenarios where many identical or similar objects are needed.
 
-In Flyweight by making a request we try to reuse as much objects as possible by sharing them. New required object will be created if we don't find such one. 
-It's being done for resource optimization.
+### Example Use Case
+In a text editor, instead of creating a new object for each character in a 10,000-word document, the Flyweight pattern uses just 26 objects (for each letter of the alphabet). These objects are reused whenever the same character is needed, optimizing memory.
 
-While in Prototype we could clone even one object, Flyweight pattern makes sense to use when in the application we use big number of objects.
+# Interpreter
 
-General information:
+### Definition
+The **Interpreter** is a behavioral design pattern that defines a representation for the grammar of a language and provides an interpreter to evaluate sentences in that language. It's commonly used for implementing Domain-Specific Languages (DSLs) where a specific problem domain is expressed in a language that the interpreter can process.
 
-Using static fields, there can only ever be one instance of the object in use at any one point in time. 
-Using the flyweight pattern, you can have any number of different instances in use simultaneously, (each one of which is used multiple times). 
-The canonical example of the flyweight pattern is for a text editor, where you need an object instantiated for each and every character in the document. 
-Instead of having one object in memory for each character in a 10,000 word document, you then only need 26 objects, 
-(assuming document only uses lower case letters), one for the letter 'a', one for the letter 'b', etc., 
-and they are reused, transiently, over and over again throughout the document, 
-each time you need to perform some function or action requiring an 'a' object.
+### When to Use
+- When you need to define a grammar for a simple language.
+- When you need to interpret sentences in that language and execute actions based on the sentences.
+- In situations where new expressions need to be easily added or existing ones modified without altering the core logic of a class.
 
+### Key Benefits
+- **Flexibility**: Allows new expressions to be added easily by modifying or extending the interpreter.
+- **Separation of Concerns**: Separates the parsing logic from the rest of the application, making it more maintainable.
+- **Adaptability**: Useful in contexts like search queries or configuration languages, where expressions can change over time.
 
-# Interpreter 
-
-Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.
-
-
-What problems can the Interpreter design pattern solve?
-
-- A grammar for a simple language should be defined
-- So that sentences in the language can be interpreted.
-
-When a problem occurs very often, it could be considered to represent it as a sentence in a simple language (Domain Specific Languages) 
-so that an interpreter can solve the problem by interpreting the sentence.
-
-For example, when many different or complex search expressions must be specified. Implementing (hard-wiring) them directly 
-into a class is inflexible because it commits the class to particular expressions and makes it impossible to specify new expressions or 
-change existing ones independently from (without having to change) the class.
-
-# Mediator 
-
-The Observer pattern works well when no coordination between the observers is necessary and the observes relationship goes one way.
-
-For example, let objects B and C observe object A. 
-When object A fires event X, then object B should execute method Y() and object C should execute method Z(). If methods B.Y() and C.Z() 
-are totally independent and require no coordination, then go ahead and use the observer pattern.
-
-On the other hand, if B.Y() must be executed before C.Z() then you will want to use the Mediator pattern where the mediator encapsulates 
-this coordination. In this scenario, mediator M would observe object A and would have references to objects B and C. 
-When A fires event X, M will handle the event and call B.Y() and C.Z() in the prescribed order.
-
-Also, if objects A, B and C need to observe each other then using a mediator as an intermediary will go a long way to decouple these objects and 
-avoid spaghetti code.
+### Example Use Case
+If you have complex search expressions that must often be evaluated, embedding them directly in your code is inflexible. The Interpreter pattern lets you represent these search expressions as sentences in a simple language, making it easy to modify or extend the search logic without changing the core class.
 
 
+# Mediator
 
-# Memento 
+### Definition
+The **Mediator** is a behavioral design pattern that centralizes communication between objects. Instead of interacting directly, objects communicate through the mediator, which coordinates their actions and reduces dependencies.
 
-The memento class is the one holding the different states you are dealing with in your object - it is what enables the "undo/redo" functionality.
+### When to Use
+- When you need to coordinate interactions between multiple objects.
+- To decouple objects and avoid complex direct dependencies.
+- When the order of actions is important.
 
-What problems can the Memento design pattern solve? 
+### Key Features
+- **Centralized Coordination**: Mediator manages the communication between objects.
+- **Decoupling**: Objects interact through the mediator, not directly.
+- **Simplified Communication**: Reduces complex dependencies.
 
-- The internal state of an object should be saved externally so that the object can be restored to this state later.
-- The object's encapsulation must not be violated.
+### Example Use Case
+When multiple objects (A, B, C) need to interact, the mediator controls the sequence of actions, ensuring coordination and avoiding direct dependencies between them.
 
-The problem is that a well designed object is encapsulated so that its representation (data structure) is hidden inside the object and 
-can't be accessed from outside the object.
+# Memento
 
+### Definition
+The **Memento** is a behavioral pattern that allows an object's state to be saved and restored without breaking encapsulation. It is commonly used for undo/redo functionality.
 
-What solution does the Memento design pattern describe?
+### When to Use
+- When you need to save and restore an object's state.
+- To implement undo/redo features.
+- When preserving encapsulation while allowing state changes.
 
+### Key Features
+- **State Saving**: The object saves its state in a memento.
+- **Encapsulation**: The internal state remains hidden.
+- **Restoration**: The object restores its state from the memento.
 
-Make an object (originator) itself responsible for
-
-- saving its internal state to a (memento) object and
-- restoring to a previous state from a (memento) object.
-
-
-Only the originator that created a memento is allowed to access it.
-
-A client (caretaker) can request a memento from the originator (to save the internal state of the originator) and pass a memento back to 
-the originator (to restore to a previous state).
-
-This enables to save and restore the internal state of an originator without violating its encapsulation.
+### Example Use Case
+In a text editor, the memento pattern allows saving and restoring document versions for undo/redo functionality without exposing the document's structure.
 
 # Observer
 
-Define a one-to-many dependency between objects where a state change in one object results in all its dependents being notified and updated automatically.
+### Definition
+The **Observer** is a behavioral design pattern that establishes a one-to-many dependency, where a change in one object automatically notifies and updates all its dependent objects.
 
-ou have a concrete example of a Student and a MessageBoard. 
-The Student registers by adding itself to the list of Observers that want to be notified when a new Message is posted to the MessageBoard. 
-When a Message is added to the MessageBoard, it iterates over its list of Observers and notifies them that the event occurred.
+### When to Use
+- When multiple objects need to be updated when one object changes.
+- When you need to decouple the object that changes from the objects that depend on it.
 
-Think Twitter. When you say you want to follow someone, Twitter adds you to their follower list. When they sent a new tweet in, 
-you see it in your input. In that case, your Twitter account is the Observer and the person you're following is the Observable.
+### Key Features
+- **One-to-Many Relationship**: A single object (subject) notifies multiple dependent objects (observers).
+- **Automatic Updates**: Observers are automatically notified when the subjectâ€™s state changes.
+
+### Example Use Case
+In Twitter, when you follow someone, your account (Observer) is added to their follower list. Whenever they tweet, you automatically see their posts in your feed, as you're notified by the system (Observable).
 
 # Prototype
 
-The Prototype pattern is a creation pattern based on cloning a pre-configured object. 
-The idea is that you pick an object that is configured for either the default or in the ballpark of some specific use case and then you 
-clone this object and configure to your exact needs.
+### Definition
+The **Prototype** is a creational pattern that allows you to clone a pre-configured object and modify it to fit specific needs. It helps eliminate repetitive configuration code by using an existing object as a starting point.
 
-The pattern is useful to remove a bunch of boilerplate code, when the configuration required would be onerous. 
-I think of Prototypes as a preset object, where you save a bunch of state as a new starting point.
+### When to Use
+- When object creation is complex and requires predefined configurations.
+- To avoid repetitive code for creating similar objects with slight modifications.
+
+### Key Features
+- **Cloning**: Objects are cloned and then adjusted to meet specific requirements.
+- **Configuration Efficiency**: Saves time by using an existing object as a template.
+
+### Example Use Case
+If you need multiple instances of an object with similar configurations, you can clone a pre-configured prototype and modify it instead of creating each object from scratch.
 
 # Proxy
 
-A proxy, in its most general form, is a class functioning as an interface to something else. 
-The proxy could interface to anything: a network connection, a large object in memory, 
-a file, or some other resource that is expensive or impossible to duplicate. 
+### Definition
+The **Proxy** pattern provides an object that controls access to another object, adding extra functionality like caching or access control.
 
-In short, a proxy is a wrapper or agent object that is being called by the client to access the real serving object behind the scenes. 
-Use of the proxy can simply be forwarding to the real object, or can provide additional logic. In the proxy, extra functionality can be provided, 
-for example caching when operations on the real object are resource intensive, 
-or checking preconditions before operations on the real object are invoked. For the client, usage of a proxy object is similar to using the real object, 
-because both implement the same interface.
+### When to Use
+- When you need to control access to an object.
+- To add extra functionality (e.g., caching or validation) before interacting with the real object.
+- When working with expensive resources like large objects or network connections.
 
-What problems can the Proxy design pattern solve?
+### Key Features
+- **Access Control**: Manages access to the real object.
+- **Extra Functionality**: Adds features like caching or permission checks.
+- **Transparency**: Both proxy and real object share the same interface.
 
-- The access to an object should be controlled.
-- Additional functionality should be provided when accessing an object.
-
-When accessing sensitive objects, for example, it should be possible to check that clients have the needed access rights.
-
-What solution does the Proxy design pattern describe?
-
-Define a separate Proxy object that
-
-- can be used as substitute for another object (Subject) and
-- implements additional functionality to control the access to this subject.
-
-This enables to work through a Proxy object to perform additional functionality when accessing a subject. For example, to check the access rights of clients accessing a sensitive object.
-To act as substitute for a s
+### Example Use Case
+A proxy can check user permissions before granting access to a sensitive resource, like a database or file.
 
 # Singleton
 
@@ -298,83 +273,68 @@ Ensure a class has only one instance, and provide a global point of access to it
 
 # State
 
-This pattern is used in computer programming to encapsulate varying behavior for the same object based on its internal state. 
-This can be a cleaner way for an object to change its behavior at runtime without resorting to large monolithic conditional statements 
-and thus improve maintainability.
+### Definition
+The **State** pattern allows an object to change its behavior based on its internal state, avoiding large conditional statements and improving maintainability.
 
-What problems can the State design pattern solve?
+### When to Use
+- When an object needs to change its behavior based on its internal state.
+- When state-specific behavior should be defined independently, allowing flexibility in adding or modifying states.
 
-- An object should change its behavior when its internal state changes.
-- State-specific behavior should be defined independently. That is, new states should be added and the behavior of existing states should be changed independently.
-Implementing state-specific behavior directly within a class is inflexible because it commits the class to a particular behavior and makes it impossible to add a new state or change the behavior of an existing state later independently from (without changing) the class.
+### Key Features
+- **Encapsulation**: Each state has its own class that handles state-specific behavior.
+- **Delegation**: The object delegates behavior to its current state object, enabling easy state changes at runtime.
 
-
-What solution does the State design pattern describe?
-
-- Define separate (state) objects that encapsulate state-specific behavior for each state. That is, define an interface (State) for performing state-specific behavior, and define classes that implement the interface for each state.
-- A class delegates state-specific behavior to its current state object instead of implementing state-specific behavior directly.
-
-This makes a class independent of how state-specific behavior is implemented. New states can be added by defining new state classes.
-A class can change its behavior at run-time by changing its current state object.
+### Example Use Case
+In a media player, different behaviors (play, pause, stop) can be implemented as separate state classes. The player changes its state object based on user actions, enabling it to behave differently depending on the current state.
 
 # Strategy
 
-Define a family of algorithms, encapsulate each one, and make them interchangeable. 
-Strategy lets the algorithm vary independently from clients that use it.
+### Definition
+The **Strategy** pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. It allows the algorithm to vary independently from the clients that use it.
 
-What is a Strategy? A strategy is a plan of action designed to achieve a specific goal;
+### When to Use
+- When you have multiple ways to perform an operation, and you want to allow flexibility in selecting the algorithm at runtime or design time.
+- To avoid conditional statements and make it easy to switch between different algorithms.
 
-“Define a family of algorithms, encapsulate each one, and make them interchangeable. 
-Strategy lets the algorithm vary independently from clients that use it.” (Gang of Four);
-Specifies a set of classes, each representing a potential behaviour. Switching between those classes changes the application behaviour. (the Strategy);
+### Key Features
+- **Encapsulation**: Each algorithm is encapsulated in a separate class.
+- **Interchangeability**: Clients can switch between algorithms easily at runtime.
+- **Polymorphism**: The strategy pattern typically uses polymorphism to change the behavior dynamically.
 
-This behaviour can be selected at runtime (using polymorphism) or design time;
-
-Capture the abstraction in an interface, bury implementation details in derived classes;
+### Example Use Case
+In a payment system, you can have multiple payment strategies (credit card, PayPal, etc.). The user can select the payment method at runtime, and the system will use the corresponding strategy to process the payment.
 
 # Template Method
 
-Similarities
+### Definition
+The **Template Method** pattern defines the structure of an algorithm in an abstract class, allowing subclasses to implement specific steps of the algorithm without changing its overall structure.
 
-Strategy and Template method patterns have a lot of similarities between them. 
-Both Strategy and Template method patterns can be used for satisfying the Open-Closed Principle 
-and making the software module easy to extend without changing its code. Both patterns represent separation of generic functionality 
-from the detailed implementation of that functionality. However, they differ a little in terms of granularity they offer.
+### When to Use
+- When you want to define the skeleton of an algorithm, but leave some steps to be implemented by subclasses.
+- To avoid code duplication by providing default behavior in a base class, while allowing specific parts to be customized.
+---
 
+### Key Features
+- **Abstract Base Class**: The algorithm structure is defined in an abstract class, with some steps left for subclass implementation.
+- **Tightly Coupled**: Subclasses are tightly coupled to the base class since they rely on its predefined algorithm.
 
-Differences
-Here are some of the differences I have observed while studying these two patterns:
+### Differences from Strategy
+- **Granularity**: Template Method focuses on customizing parts of an algorithm, while Strategy allows complete replacement of an algorithm.
+- **Coupling**: Template Method creates tighter coupling between client and base class, whereas Strategy maintains loose coupling.
 
-- In Strategy, the coupling between the client and strategy is more loose whereas in Template Method, the two modules are more tightly coupled.
+# Visitor
 
-- In Strategy, mostly an interface is used though abstract class can also be used depending on the situation, and concrete class is not used whereas in 
-Template method mostly abstract class or concrete class is used, interface is not used.
+### Definition
+The **Visitor** pattern allows adding new operations to an object structure without modifying the objects themselves.
 
-- In Strategy pattern, generally entire behaviour of the class is represented in terms of an interface, 
-on the other hand, Template method is used for reducing code duplication and the boilerplate code is defined in base framework or abstract class. 
-In Template Method, there can even be a concrete class with default implementation.
+### When to Use
+- When you need to add new operations to classes without changing their code.
+- When the object structure consists of many unrelated classes.
 
-- In simple words, you can change the entire strategy (algorithm) in Strategy pattern, however, in Template method, 
-only some things change (parts of algorithm) and rest of the things remain unchanged. In Template Method, the invariant steps are implemented in 
-an abstract base class, while the variant steps are either given a default implementation, or no implementation at all. In Template method, 
-the component designer mandates the required steps of an algorithm, and the ordering of the steps, but allows the component client to extend or 
-replace some number of these steps.
+### Key Features
+- **Visitor Object**: Defines operations for the object structure.
+- **Accept Method**: Objects delegate operations to the visitor using `accept(visitor)`.
 
-# Visitor 
-
-
-What problems can the Visitor design pattern solve?
-
-- It should be possible to define a new operation for (some) classes of an object structure without changing the classes.
-
-When new operations are needed frequently and the object structure consists of many unrelated classes, it's inflexible to add new subclasses each time a new operation is required because "[..] distributing all these operations across the various node classes leads to a system that's hard to understand, maintain, and change." [1]
-
-
-What solution does the Visitor design pattern describe?
-
-
-- Define a separate (visitor) object that implements an operation to be performed on elements of an object structure.
-- Clients traverse the object structure and call a dispatching operation accept(visitor) on an element — that "dispatches" (delegates) 
-the request to the "accepted visitor object". The visitor object then performs the operation on the element ("visits the element").
-
-This makes it possible to create new operations independently from the classes of an object structure by adding new visitor objects.
+### Benefits
+- **Extensibility**: New operations can be added via new visitors.
+- **Separation of Concerns**: Operations are decoupled from the object structure.
